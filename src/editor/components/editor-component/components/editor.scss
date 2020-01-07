@@ -7,7 +7,6 @@ $rowHeight: 22px;
 @mixin cursor {
 	animation: blinker 0.5s step-end infinite;
 	position: absolute;
-	font-weight: bolder;
 	&:before {
 		content: '\007c';
 		font-weight: 800;
@@ -159,7 +158,6 @@ $rowHeight: 22px;
 			background-color: transparent;
 			.cursor {
 				@include cursor();
-				position: absolute;
 			}
 			.bloc-selection {
 				position: absolute;
@@ -173,6 +171,7 @@ $rowHeight: 22px;
 			z-index: 0;
 			height: 100%;
 			.row {
+				text-align: left;
 				white-space: pre;
 				height: $rowHeight;
 				font-size: 15px;

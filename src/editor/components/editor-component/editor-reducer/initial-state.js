@@ -16,6 +16,7 @@ const initialState = {
 	errors: [],
 	getTokens: getTokensDefault,
 	tokenize: false,
+	tokens: [],
 };
 
 export default initialState;

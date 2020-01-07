@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Editor } from './editor-component/components';
 import Console from './console';
-import getTools from '../../antlr-tools';
+// import getTools from '../../antlr-tools';
+import { getTokens } from './tokenizer-worker';
 import { composeShortcuts } from './editor-component';
 import '../app.scss';
 import '../vtl-tokens.scss';
@@ -19,7 +20,6 @@ const shortcuts = composeShortcuts({
 
 export default props => {
 	const [errors, setErrors] = useState([]);
-	const { parse, getTokens } = getTools(props.grammar);
 	return (
 		<>
 			<div className="workbench-display">
@@ -28,7 +28,7 @@ export default props => {
 					handleChange={errors => {
 						setErrors(errors);
 					}}
-					parse={parse}
+					parse={() => []}
 					getTokens={getTokens}
 					{...props}
 				/>
