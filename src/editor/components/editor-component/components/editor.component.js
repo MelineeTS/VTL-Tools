@@ -55,7 +55,7 @@ const checkTokensLines = lines => tokens => {
 	return nl;
 };
 
-const Editor = ({ parse }) => {
+const Editor = React.memo(({ parse }) => {
 	const editorEl = useRef();
 	const state = useContext(EditorContext);
 	const {
@@ -136,7 +136,7 @@ const Editor = ({ parse }) => {
 			<Overlay lines={lines} el={editorEl} />
 		</div>
 	);
-};
+};)
 
 Editor.propTypes = {
 	parse: PropTypes.func.isRequired,
